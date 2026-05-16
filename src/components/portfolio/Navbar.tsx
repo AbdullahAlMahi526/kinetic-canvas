@@ -8,7 +8,7 @@ const sections = [
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
-  { id: "research", label: "Research" },
+  { id: "research", label: "Honors" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -55,7 +55,7 @@ export function Navbar() {
         >
           <a href="#home" className="flex items-center gap-2">
             <div className="size-8 rounded-lg bg-accent-gradient shadow-glow" />
-            <span className="font-display font-bold tracking-tight">Aarav<span className="text-[var(--orange)]">.</span></span>
+            <span className="font-display font-bold tracking-tight">Mahi<span className="text-[var(--orange)]">.</span></span>
           </a>
 
           <ul className="hidden md:flex items-center gap-1">

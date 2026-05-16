@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   Brain, Cpu, Code2, CircuitBoard, Wrench, FlaskConical,
-  Download, ExternalLink, Github, Quote, MapPin, Send,
+  Download, ExternalLink, Github, MapPin, Send,
   Award, FileText, Trophy, GraduationCap, Briefcase, ArrowUp
 } from "lucide-react";
 
@@ -52,18 +52,23 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 export function About() {
   return (
-    <Section id="about" eyebrow="ABOUT / 01" title={<>An engineer who treats <span className="text-gradient">code, silicon and design</span> as one craft.</>}>
+    <Section id="about" eyebrow="ABOUT / 01" title={<>An engineer who treats <span className="text-gradient">circuits, code and creativity</span> as one craft.</>}>
       <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start">
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>
-            I'm <span className="text-foreground font-medium">Aarav Mehta</span>, an Electronics & AI Engineer
-            building production systems where firmware meets machine learning. My work spans neural
-            inference on edge MCUs, computer-vision pipelines, and PCB design for research-grade instruments.
+            I'm <span className="text-foreground font-medium">Abdullah Al Mahi</span>, an Electrical, Electronics and
+            Communication Engineering undergraduate at{" "}
+            <span className="text-foreground font-medium">Military Institute of Science and Technology (MIST)</span>,
+            Dhaka. I'm deeply interested in Electronics, Machine Learning, and Embedded Systems.
           </p>
           <p>
-            I've spent the last five years shipping products that need to feel both precise and human —
-            from autonomous drones to medical wearables. I care deeply about latency, craftsmanship, and
-            the moments where engineering becomes invisible.
+            Currently serving as an <span className="text-foreground font-medium">Associate Director (Membership Driven Program)</span> at
+            IEEE MIST Student Branch and as an <span className="text-foreground font-medium">Executive Member (Technical)</span> at MIST Robotics Club.
+            I'm passionate about building real-world systems that sit at the intersection of hardware and intelligence.
+          </p>
+          <p>
+            Alongside engineering, I'm experienced in graphic design using Adobe Illustrator and Photoshop —
+            because great engineering deserves great presentation.
           </p>
           <div className="flex gap-4 pt-2">
             <a href="#" className="magnetic-btn inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium">
@@ -76,9 +81,9 @@ export function About() {
 
           <div className="grid grid-cols-3 gap-4 pt-8">
             {[
-              { n: 42, s: "+", l: "Shipped Projects" },
-              { n: 6, s: "+", l: "Years Experience" },
-              { n: 14, s: "", l: "Publications" },
+              { n: 3, s: "+", l: "Projects" },
+              { n: 2, s: "+", l: "Leadership Roles" },
+              { n: 3, s: ".92", l: "Current CGPA" },
             ].map((x) => (
               <div key={x.l} className="glass rounded-2xl p-5 shadow-soft">
                 <div className="font-display text-4xl font-bold text-gradient"><Counter to={x.n} suffix={x.s} /></div>
@@ -88,7 +93,7 @@ export function About() {
           </div>
         </div>
 
-        {/* Education timeline mini */}
+        {/* Education timeline */}
         <div className="glass rounded-3xl p-8 shadow-elegant relative overflow-hidden">
           <div className="absolute -top-20 -right-20 size-60 rounded-full bg-[var(--orange)] opacity-20 blur-3xl" />
           <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[var(--orange)] mb-5">
@@ -97,9 +102,9 @@ export function About() {
           <ul className="space-y-6 relative">
             <span className="absolute left-[7px] top-2 bottom-2 w-px bg-border" />
             {[
-              { year: "2023 — 2025", title: "M.Sc. AI & Electronics", place: "ETH Zürich" },
-              { year: "2019 — 2023", title: "B.Eng. Electronics Engineering", place: "IIT Bombay" },
-              { year: "2024", title: "Visiting Researcher", place: "MIT Media Lab" },
+              { year: "2023 — 2027 (Expected)", title: "BSc in EECE", place: "MIST, Dhaka · CGPA 3.92 / 4.00" },
+              { year: "2022", title: "Higher Secondary Certificate (HSC)", place: "BAF Shaheen College Kurmitola · GPA 5.00 / 5.00" },
+              { year: "2020", title: "Secondary School Certificate (SSC)", place: "BAF Shaheen College Kurmitola · GPA 5.00 / 5.00" },
             ].map((e) => (
               <li key={e.title} className="relative pl-7">
                 <span className="absolute left-0 top-1.5 size-3.5 rounded-full bg-accent-gradient shadow-glow" />
@@ -117,19 +122,19 @@ export function About() {
 
 /* ---------- Skills ---------- */
 const skillGroups = [
-  { Icon: Code2, name: "Programming", items: ["Python", "C/C++", "Rust", "TypeScript"], pct: 92 },
-  { Icon: Brain, name: "AI / ML", items: ["PyTorch", "JAX", "ONNX", "TF-Lite"], pct: 88 },
-  { Icon: CircuitBoard, name: "Embedded", items: ["STM32", "ESP32", "FreeRTOS", "Zephyr"], pct: 90 },
-  { Icon: Cpu, name: "Hardware", items: ["KiCad", "Altium", "FPGA", "Verilog"], pct: 85 },
-  { Icon: Wrench, name: "CAD & Sim", items: ["Fusion 360", "MATLAB", "Simulink"], pct: 80 },
-  { Icon: FlaskConical, name: "Research", items: ["LaTeX", "Jupyter", "Weights & Biases"], pct: 87 },
+  { Icon: Code2, name: "Programming", items: ["C", "C++", "Python", "MATLAB"], pct: 85 },
+  { Icon: Brain, name: "AI / ML", items: ["Machine Learning", "Python ML libs", "Data Analysis"], pct: 78 },
+  { Icon: CircuitBoard, name: "EDA & Simulation", items: ["Cadence Virtuoso", "Proteus", "KiCAD", "Orcad", "PSPICE", "ETAP"], pct: 82 },
+  { Icon: Cpu, name: "Microcontrollers", items: ["Arduino", "ESP32"], pct: 80 },
+  { Icon: Wrench, name: "CAD & Design", items: ["AutoCAD Electrical", "Microwind", "Dsch2", "Capture CIS"], pct: 75 },
+  { Icon: FlaskConical, name: "Creative Tools", items: ["Adobe Illustrator", "Adobe Photoshop", "MS Office Suite"], pct: 88 },
 ];
 
-const marquee = ["PyTorch", "STM32", "Rust", "ONNX", "KiCad", "FreeRTOS", "JAX", "Verilog", "ESP32", "Fusion360", "TensorRT", "Zephyr"];
+const marquee = ["Python", "C++", "MATLAB", "ESP32", "Arduino", "KiCAD", "Cadence", "Proteus", "PSPICE", "Illustrator", "Machine Learning", "ETAP"];
 
 export function Skills() {
   return (
-    <Section id="skills" eyebrow="STACK / 02" title={<>A toolkit forged across <span className="text-gradient">silicon, code & systems</span>.</>}>
+    <Section id="skills" eyebrow="STACK / 02" title={<>A toolkit spanning <span className="text-gradient">silicon, software & design</span>.</>}>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {skillGroups.map((g, i) => (
           <motion.div
@@ -202,19 +207,36 @@ function CircularPct({ value }: { value: number }) {
 
 /* ---------- Projects ---------- */
 const projects = [
-  { tag: "AI", title: "NeuroEdge", desc: "On-device transformer inference engine for ARM Cortex-M, hitting 30ms latency.", stack: ["C++", "PyTorch", "STM32"], color: "from-[var(--teal)] to-[var(--orange)]" },
-  { tag: "Embedded", title: "AeroPCB", desc: "6-layer flight controller with sensor fusion firmware for autonomous quadcopters.", stack: ["KiCad", "Rust", "FreeRTOS"], color: "from-[var(--orange)] to-[var(--clay)]" },
-  { tag: "Research", title: "BioPulse", desc: "Wearable ECG with on-device arrhythmia detection — published at IEEE EMBC.", stack: ["TF-Lite", "ESP32", "Python"], color: "from-[var(--clay)] to-[var(--teal)]" },
-  { tag: "Web", title: "Lumen UI", desc: "An open-source design system for engineering dashboards. 4k+ stars.", stack: ["React", "TS", "Three.js"], color: "from-[var(--teal)] to-[var(--clay)]" },
+  {
+    tag: "Hardware",
+    title: "VTOL Aircraft",
+    desc: "Part of a multidisciplinary team developing a functional VTOL prototype, contributing to control electronics and avionics system design.",
+    stack: ["Electronics", "Control Systems", "ESP32"],
+    color: "from-[var(--teal)] to-[var(--orange)]"
+  },
+  {
+    tag: "Research",
+    title: "SRAM Analysis",
+    desc: "Comprehensive simulations using Cadence Virtuoso analyzing Static Noise Margin and power consumption across 6T, 8T, 10T, and 12T SRAM configurations comparing CNFET and CMOS technologies.",
+    stack: ["Cadence Virtuoso", "CNFET", "CMOS"],
+    color: "from-[var(--orange)] to-[var(--clay)]"
+  },
+  {
+    tag: "Software",
+    title: "FormSense",
+    desc: "MATLAB-based biomechanical form assessment application analyzing 6-DoF wrist-IMU sensor data to provide phase-graded form assessment for resistance training.",
+    stack: ["MATLAB", "IMU Sensors", "Biomechanics"],
+    color: "from-[var(--clay)] to-[var(--teal)]"
+  },
 ];
 
 export function Projects() {
   const [filter, setFilter] = useState("All");
-  const tags = ["All", "AI", "Embedded", "Research", "Web"];
+  const tags = ["All", "Hardware", "Research", "Software"];
   const filtered = filter === "All" ? projects : projects.filter((p) => p.tag === filter);
 
   return (
-    <Section id="projects" eyebrow="WORK / 03" title={<>Selected <span className="text-gradient">projects</span> that taught me something.</>}>
+    <Section id="projects" eyebrow="WORK / 03" title={<>Selected <span className="text-gradient">projects</span> that shaped my thinking.</>}>
       <div className="flex flex-wrap gap-2 mb-8">
         {tags.map((t) => (
           <button
@@ -248,12 +270,12 @@ export function Projects() {
                 className="absolute inset-0 flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="font-display text-6xl md:text-7xl font-bold text-white/95 drop-shadow-lg">{p.title}</span>
+                <span className="font-display text-4xl md:text-5xl font-bold text-white/95 drop-shadow-lg text-center px-4">{p.title}</span>
               </motion.div>
               <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-xs font-mono">{p.tag}</div>
               <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
                 <a href="#" className="glass rounded-full px-4 py-2 text-sm flex items-center gap-2 text-background"><Github className="size-4" /> Code</a>
-                <a href="#" className="bg-accent-gradient rounded-full px-4 py-2 text-sm flex items-center gap-2 text-white"><ExternalLink className="size-4" /> Live</a>
+                <a href="#" className="bg-accent-gradient rounded-full px-4 py-2 text-sm flex items-center gap-2 text-white"><ExternalLink className="size-4" /> Details</a>
               </div>
             </div>
             <div className="p-6">
@@ -274,15 +296,29 @@ export function Projects() {
 
 /* ---------- Experience timeline ---------- */
 const exp = [
-  { date: "2024 — Now", role: "AI Systems Engineer", company: "Helix Robotics", desc: "Leading edge-ML inference on autonomous surgical instruments." },
-  { date: "2022 — 2024", role: "Embedded Engineer", company: "Northwave Labs", desc: "Designed 12-layer PCBs and Rust firmware for industrial IoT." },
-  { date: "2020 — 2022", role: "Research Assistant", company: "IIT Bombay — VLSI Lab", desc: "Built neuromorphic accelerator prototypes on FPGA." },
-  { date: "2019", role: "Hardware Intern", company: "Bosch", desc: "Sensor fusion for ADAS prototype vehicles." },
+  {
+    date: "June 2025 — Present",
+    role: "Associate Director (Membership Driven Program)",
+    company: "IEEE MIST Student Branch",
+    desc: "Orchestrated a 12-day 'SolidWorks for Engineers' online training workshop, managing promotional campaigns, registration logistics, and live session support. Co-organized the 2025 IEEE APS YP Ambassadors Talk on advanced mm-Wave wireless systems, coordinating an international technical seminar with multiple regional IEEE chapters."
+  },
+  {
+    date: "June 2025 — Present",
+    role: "Executive Member (Technical)",
+    company: "MIST Robotics Club",
+    desc: "Key organizer for 'ROBOLUTION 2025', a flagship national-level robotics festival hosting over 2,000 participants across 12 technical segments. Mentored junior volunteers and facilitated cross-team communication. Recognized by the Head of the EECE Department for exceptional dedication and problem-solving."
+  },
+  {
+    date: "May 2023 — July 2025",
+    role: "Academic Project Researcher",
+    company: "Military Institute of Science and Technology",
+    desc: "Worked on multiple research projects including VTOL Aircraft Development, SRAM stability analysis using Cadence Virtuoso, and the FormSense biomechanical assessment application."
+  },
 ];
 
 export function Experience() {
   return (
-    <Section id="experience" eyebrow="JOURNEY / 04" title={<>A timeline of <span className="text-gradient">teams, tools and turning points</span>.</>}>
+    <Section id="experience" eyebrow="JOURNEY / 04" title={<>A timeline of <span className="text-gradient">leadership, projects and turning points</span>.</>}>
       <div className="relative">
         <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
         <motion.div
@@ -320,19 +356,19 @@ export function Experience() {
   );
 }
 
-/* ---------- Research ---------- */
-const research = [
-  { Icon: FileText, title: "On-Device Transformers for Bioelectric Signals", venue: "IEEE EMBC 2024", type: "Paper" },
-  { Icon: Trophy, title: "Winner — TinyML Hardware Challenge", venue: "Edge Impulse 2023", type: "Award" },
-  { Icon: Award, title: "Best Demo — Neuromorphic FPGA Accelerator", venue: "DAC 2023", type: "Award" },
-  { Icon: FileText, title: "Sparse Attention on Cortex-M55", venue: "tinyML Summit 2024", type: "Paper" },
+/* ---------- Honors & Awards (replaces Research) ---------- */
+const honors = [
+  { Icon: Trophy, title: "MIST Dean's List 2024", venue: "Faculty of ECE — CGPA 3.88", type: "Award" },
+  { Icon: Trophy, title: "MIST Dean's List 2023", venue: "Faculty of ECE — CGPA 3.91", type: "Award" },
+  { Icon: Award, title: "ROBOLUTION 2025 Organizer", venue: "MIST Robotics Club — 2,000+ Participants", type: "Achievement" },
+  { Icon: FileText, title: "IEEE APS YP Ambassadors Talk", venue: "2025 — mm-Wave Wireless Systems Seminar", type: "Event" },
 ];
 
 export function Research() {
   return (
-    <Section id="research" eyebrow="RESEARCH / 05" title={<>Papers, awards and <span className="text-gradient">curiosities</span> in print.</>}>
+    <Section id="research" eyebrow="HONORS / 05" title={<>Awards, achievements and <span className="text-gradient">milestones</span>.</>}>
       <div className="grid md:grid-cols-2 gap-5">
-        {research.map((r, i) => (
+        {honors.map((r, i) => (
           <motion.div
             key={r.title}
             initial={{ opacity: 0, y: 30 }}
@@ -359,10 +395,10 @@ export function Research() {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
         {[
-          { n: 14, l: "Publications" },
-          { n: 320, l: "Citations" },
-          { n: 9, l: "Conferences" },
-          { n: 5, l: "Awards" },
+          { n: 3, l: "Projects" },
+          { n: 2, l: "Dean's Lists" },
+          { n: 2, l: "Leadership Roles" },
+          { n: 2000, l: "Event Participants" },
         ].map((s) => (
           <div key={s.l} className="glass rounded-2xl p-6 text-center shadow-soft">
             <div className="font-display text-4xl font-bold text-gradient"><Counter to={s.n} /></div>
@@ -374,72 +410,53 @@ export function Research() {
   );
 }
 
-/* ---------- Testimonials ---------- */
-const testis = [
-  { name: "Dr. Lena Park", role: "Director, Helix Robotics", quote: "Aarav ships hardware and ML with rare taste — the kind of engineer who quietly raises the ceiling of a whole team." },
-  { name: "Prof. R. Iyer", role: "IIT Bombay", quote: "His neuromorphic FPGA work was the most rigorous undergraduate project I've supervised in a decade." },
-  { name: "Maya Chen", role: "Founder, Northwave Labs", quote: "He turned a sketch on a napkin into a certified industrial product in nine months. Wild." },
-  { name: "Tom Becker", role: "Principal Eng., Bosch", quote: "Calm, exact, and obsessed with latency. Exactly who you want on a sensor stack." },
-];
-
+/* ---------- Testimonials — removed, kept as empty export for compatibility ---------- */
 export function Testimonials() {
-  return (
-    <Section id="testimonials" eyebrow="VOICES / 06" title={<>What collaborators <span className="text-gradient">say</span>.</>}>
-      <div className="relative overflow-hidden">
-        <div className="flex gap-6 marquee-track w-max">
-          {[...testis, ...testis].map((t, i) => (
-            <div key={i} className="glass rounded-3xl p-8 w-[360px] md:w-[420px] shrink-0 shadow-soft relative">
-              <Quote className="absolute top-5 right-5 size-8 text-[var(--orange)]/30" />
-              <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="size-10 rounded-full bg-accent-gradient flex items-center justify-center text-white font-bold">
-                  {t.name[0]}
-                </div>
-                <div>
-                  <div className="font-medium text-sm">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </Section>
-  );
+  return null;
 }
 
 /* ---------- Contact ---------- */
 export function Contact() {
   return (
-    <Section id="contact" eyebrow="CONTACT / 07" title={<>Let's build something <span className="text-gradient">unforgettable</span>.</>}>
+    <Section id="contact" eyebrow="CONTACT / 06" title={<>Let's build something <span className="text-gradient">meaningful together</span>.</>}>
       <div className="grid lg:grid-cols-2 gap-10">
         <div className="space-y-6">
           <p className="text-lg text-muted-foreground max-w-md">
-            I'm currently open to research collaborations, product builds, and the occasional
-            late-night napkin sketch. Drop a note — I reply within 48 hours.
+            I'm currently open to internships, research collaborations, and exciting engineering projects.
+            Feel free to reach out — I reply promptly!
           </p>
 
           <div className="glass rounded-2xl p-6 flex items-center gap-4 shadow-soft">
             <MapPin className="size-5 text-[var(--orange)]" />
             <div>
-              <div className="font-medium">Zürich · Mumbai · Remote</div>
-              <div className="text-sm text-muted-foreground">CET / IST friendly</div>
+              <div className="font-medium">55/8-A, North Manikdi, Dhaka-1206</div>
+              <div className="text-sm text-muted-foreground">Bangladesh (GMT+6)</div>
             </div>
           </div>
 
           <div className="glass rounded-2xl p-6 shadow-soft">
-            <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">Direct</div>
-            <a href="mailto:hello@aarav.dev" className="text-2xl font-display font-bold text-gradient hover:opacity-80 transition-opacity">
-              hello@aarav.dev
+            <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">Email</div>
+            <a href="mailto:abdullahmahi526@gmail.com" className="text-xl font-display font-bold text-gradient hover:opacity-80 transition-opacity">
+              abdullahmahi526@gmail.com
+            </a>
+          </div>
+
+          <div className="glass rounded-2xl p-6 shadow-soft">
+            <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">Phone</div>
+            <a href="tel:01518659236" className="text-xl font-display font-bold hover:opacity-80 transition-opacity">
+              01518659236
             </a>
           </div>
 
           <div className="flex gap-2">
-            {["GH", "IN", "X", "DR"].map((s) => (
-              <a key={s} href="#" className="size-12 rounded-full glass flex items-center justify-center text-sm font-mono font-bold hover:shadow-glow hover:text-[var(--orange)] transition-all">
-                {s}
-              </a>
-            ))}
+            <a href="https://www.linkedin.com/in/aamahi" target="_blank" rel="noreferrer"
+               className="px-4 h-12 rounded-full glass flex items-center justify-center text-sm font-mono font-bold hover:shadow-glow hover:text-[var(--orange)] transition-all">
+              LinkedIn
+            </a>
+            <a href="#"
+               className="px-4 h-12 rounded-full glass flex items-center justify-center text-sm font-mono font-bold hover:shadow-glow hover:text-[var(--orange)] transition-all">
+              GitHub
+            </a>
           </div>
         </div>
 
@@ -454,7 +471,7 @@ export function Contact() {
           ].map((f) => (
             <FloatingInput key={f.name} {...f} />
           ))}
-          <FloatingTextarea label="Tell me about your project" name="msg" />
+          <FloatingTextarea label="Tell me about your project or idea" name="msg" />
           <button
             type="submit"
             className="magnetic-btn w-full rounded-full bg-accent-gradient text-white py-3.5 font-medium flex items-center justify-center gap-2 shadow-glow"
@@ -523,8 +540,8 @@ export function Footer() {
         <div className="flex items-center gap-3">
           <div className="size-9 rounded-lg bg-accent-gradient shadow-glow" />
           <div>
-            <div className="font-display font-bold">Aarav Mehta</div>
-            <div className="text-xs text-muted-foreground">Electronics & AI Engineer</div>
+            <div className="font-display font-bold">Abdullah Al Mahi</div>
+            <div className="text-xs text-muted-foreground">EECE Undergraduate · MIST</div>
           </div>
         </div>
 
@@ -542,7 +559,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto max-w-7xl mt-10 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
-        <div>© {new Date().getFullYear()} Aarav Mehta. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} Abdullah Al Mahi. All rights reserved.</div>
         <div className="font-mono">v 1.0 · crafted with framer-motion + react</div>
       </div>
     </footer>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, ArrowDown, Cpu, Sparkles } from "lucide-react";
 
-const roles = ["Electronics Engineer", "AI Researcher", "Embedded Systems", "Creative Developer"];
+const roles = ["EECE Undergraduate", "Machine Learning Enthusiast", "Embedded Systems Developer", "Graphic Designer"];
 
 export function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -58,11 +58,11 @@ export function Hero() {
             className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-mono tracking-widest mb-6"
           >
             <span className="size-1.5 rounded-full bg-[var(--orange)] animate-pulse" />
-            AVAILABLE FOR COLLABORATIONS
+            OPEN TO COLLABORATIONS & OPPORTUNITIES
           </motion.div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
-            {"Building Intelligent".split(" ").map((w, i) => (
+            {"Engineering the".split(" ").map((w, i) => (
               <motion.span
                 key={i}
                 initial={{ y: 80, opacity: 0 }}
@@ -80,7 +80,7 @@ export function Hero() {
               transition={{ delay: 1.6, duration: 0.8 }}
               className="inline-block text-gradient"
             >
-              Systems & Experiences
+              Future of Electronics
             </motion.span>
           </h1>
 
@@ -103,8 +103,8 @@ export function Hero() {
             transition={{ delay: 2.2 }}
             className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground/90"
           >
-            I design and engineer the intersection of silicon and intelligence — from
-            embedded firmware and PCB design to deep-learning models that ship to production.
+            BSc student at MIST pursuing Electrical, Electronics & Communication Engineering —
+            blending circuit design, machine learning, and creative problem-solving into real-world systems.
           </motion.p>
 
           <motion.div
@@ -124,8 +124,8 @@ export function Hero() {
             <div className="flex items-center gap-2 ml-2">
               {[
                 { Icon: Github, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Mail, href: "#contact" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/aamahi" },
+                { Icon: Mail, href: "mailto:abdullahmahi526@gmail.com" },
               ].map(({ Icon, href }, i) => (
                 <a key={i} href={href} className="size-10 rounded-full glass flex items-center justify-center hover:shadow-glow hover:text-[var(--orange)] transition-all">
                   <Icon className="size-4" />
@@ -157,10 +157,10 @@ export function Hero() {
 
           {/* Floating tech chips */}
           {[
-            { label: "AI", top: "-2%", left: "45%", delay: 0 },
+            { label: "ML", top: "-2%", left: "45%", delay: 0 },
             { label: "PCB", top: "40%", left: "-8%", delay: 0.4 },
-            { label: "FPGA", top: "40%", left: "98%", delay: 0.8 },
-            { label: "ML", top: "95%", left: "45%", delay: 1.2 },
+            { label: "VTOL", top: "40%", left: "98%", delay: 0.8 },
+            { label: "SRAM", top: "95%", left: "45%", delay: 1.2 },
           ].map((c) => (
             <motion.div
               key={c.label}
