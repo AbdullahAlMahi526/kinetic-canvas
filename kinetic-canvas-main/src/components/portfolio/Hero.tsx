@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, ArrowDown, Cpu, Sparkles } from "lucide-react";
 
-const roles = ["Electronics Engineer", "AI Researcher", "Embedded Systems", "Creative Developer"];
+// Customized roles for the typing animation based on the CV
+const roles = [
+  "EECE Student at MIST",
+  "Electronics & ML Enthusiast",
+  "Technical Exec @ MRC",
+  "IEEE Associate Director",
+];
 
 export function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -31,7 +37,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20"
+    >
       {/* Background layers */}
       <div className="absolute inset-0 bg-hero" />
       <div className="absolute inset-0 grid-bg opacity-40" />
@@ -58,11 +67,11 @@ export function Hero() {
             className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-mono tracking-widest mb-6"
           >
             <span className="size-1.5 rounded-full bg-[var(--orange)] animate-pulse" />
-            AVAILABLE FOR COLLABORATIONS
+            DEAN'S LIST SCHOLAR | CGPA 3.92
           </motion.div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
-            {"Building Intelligent".split(" ").map((w, i) => (
+            {"Engineering Smart".split(" ").map((w, i) => (
               <motion.span
                 key={i}
                 initial={{ y: 80, opacity: 0 }}
@@ -80,7 +89,7 @@ export function Hero() {
               transition={{ delay: 1.6, duration: 0.8 }}
               className="inline-block text-gradient"
             >
-              Systems & Experiences
+              Hardware & Systems
             </motion.span>
           </h1>
 
@@ -103,8 +112,10 @@ export function Hero() {
             transition={{ delay: 2.2 }}
             className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground/90"
           >
-            I design and engineer the intersection of silicon and intelligence — from
-            embedded firmware and PCB design to deep-learning models that ship to production.
+            I am a detail-oriented EECE undergraduate blending electronics with machine learning. My
+            expertise ranges from comprehensive SRAM stability analysis in Cadence Virtuoso and VTOL
+            control systems, to resolving active-low logic loops and specific Q2-to-A0 address
+            mappings in Proteus, alongside rigorous uint8-to-double data conversions in MATLAB.
           </motion.p>
 
           <motion.div
@@ -113,21 +124,32 @@ export function Hero() {
             transition={{ delay: 2.4 }}
             className="mt-8 flex flex-wrap items-center gap-4"
           >
-            <a href="#projects" className="magnetic-btn group relative inline-flex items-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-medium text-white shadow-glow">
+            <a
+              href="#projects"
+              className="magnetic-btn group relative inline-flex items-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-medium text-white shadow-glow"
+            >
               <Sparkles className="size-4" />
               Explore Work
             </a>
-            <a href="#contact" className="magnetic-btn glass rounded-full px-6 py-3 text-sm font-medium">
+            <a
+              href="#contact"
+              className="magnetic-btn glass rounded-full px-6 py-3 text-sm font-medium"
+            >
               Let's Talk →
             </a>
 
             <div className="flex items-center gap-2 ml-2">
               {[
-                { Icon: Github, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Mail, href: "#contact" },
-              ].map(({ Icon, href }, i) => (
-                <a key={i} href={href} className="size-10 rounded-full glass flex items-center justify-center hover:shadow-glow hover:text-[var(--orange)] transition-all">
+                { Icon: Github, href: "https://github.com/AbdullahAlMahi526", target: true },
+                { Icon: Linkedin, href: "https://linkedin.com/in/abdullah_al_mahi", target: true },
+                { Icon: Mail, href: "mailto:abdullahmahi526@gmail.com", target: false },
+              ].map(({ Icon, href, target }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  {...(target && { target: "_blank", rel: "noopener noreferrer" })}
+                  className="size-10 rounded-full glass flex items-center justify-center hover:shadow-glow hover:text-[var(--orange)] transition-all"
+                >
                   <Icon className="size-4" />
                 </a>
               ))}
@@ -147,7 +169,9 @@ export function Hero() {
             <div className="absolute inset-0 bg-cool-gradient opacity-70" />
             <div className="absolute inset-0 grid-bg opacity-30" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-display text-[8rem] font-bold text-white/90 drop-shadow-lg">A</span>
+              <span className="font-display text-[8rem] font-bold text-white/90 drop-shadow-lg">
+                A
+              </span>
             </div>
           </div>
 
@@ -155,12 +179,12 @@ export function Hero() {
           <div className="absolute inset-0 rounded-full border border-dashed border-[var(--teal)]/40 animate-spin-slow" />
           <div className="absolute inset-[-30px] rounded-full border border-[var(--orange)]/20" />
 
-          {/* Floating tech chips */}
+          {/* Floating tech chips mapped directly to CV skills */}
           {[
-            { label: "AI", top: "-2%", left: "45%", delay: 0 },
-            { label: "PCB", top: "40%", left: "-8%", delay: 0.4 },
-            { label: "FPGA", top: "40%", left: "98%", delay: 0.8 },
-            { label: "ML", top: "95%", left: "45%", delay: 1.2 },
+            { label: "Cadence", top: "-2%", left: "45%", delay: 0 },
+            { label: "Proteus", top: "40%", left: "-8%", delay: 0.4 },
+            { label: "KiCAD", top: "40%", left: "98%", delay: 0.8 },
+            { label: "MATLAB", top: "95%", left: "45%", delay: 1.2 },
           ].map((c) => (
             <motion.div
               key={c.label}
