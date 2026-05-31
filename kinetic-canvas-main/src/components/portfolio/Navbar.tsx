@@ -55,7 +55,9 @@ export function Navbar() {
         >
           <a href="#home" className="flex items-center gap-2">
             <div className="size-8 rounded-lg bg-accent-gradient shadow-glow" />
-            <span className="font-display font-bold tracking-tight">Aarav<span className="text-[var(--orange)]">.</span></span>
+            <span className="font-display font-bold tracking-tight">
+              Abdullah Al Mahi<span className="text-[var(--orange)]">.</span>
+            </span>
           </a>
 
           <ul className="hidden md:flex items-center gap-1">
@@ -84,7 +86,11 @@ export function Navbar() {
               aria-label="Toggle theme"
               className="size-9 rounded-full glass flex items-center justify-center hover:shadow-glow transition-all"
             >
-              <motion.div key={String(dark)} initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }}>
+              <motion.div
+                key={String(dark)}
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+              >
                 {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
               </motion.div>
             </button>
