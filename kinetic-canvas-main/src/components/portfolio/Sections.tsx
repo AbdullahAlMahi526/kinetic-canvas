@@ -818,7 +818,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl mt-10 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
         <div>© {new Date().getFullYear()} Abdullah Al Mahi. All rights reserved.</div>
-        <div className="font-mono">crafted with framer-motion + react</div>
+        <div className="font-mono"></div>
       </div>
     </footer>
   );
